@@ -196,11 +196,11 @@ Klase:
 
 - PowerUpDecorator – bazni (apstraktni) dekorator za power-upove, dodaju se efekti balonu.
 
-      appy(): apstraktna metoda
+      appy(): apstraktna metoda. Implementira se u podklasama.
 
 - FuelPowerUpDecorator – povećavanje dostupne količine goriva za neki postotak.
 
-      apply(): dodaje gorivo balonu
+      apply(): primjenjuje efekt povećanja goriva.
 
 - ShieldPowerUpDecorator – aktiviranje štita na balonu za određeno vrijeme (ovisno koji je štit pokupljen).
 
@@ -242,11 +242,11 @@ Klase:
 
 - PowerUp – bazna klasa za power-upove
 
-      update(): pomiče prepreke vertikalno
+      update(): ažurira vertikalnu poziciju power-upa.
 
-- FuelPowerUp – naslijeđuje PowerUp i definira efekte (amount)
+- FuelPowerUp – nasljeđuje PowerUp i definira efekte (amount)
 
-- ShieldPowerUp – naslijeđuje PowerUp i definira efekte (duration)
+- ShieldPowerUp – nasljeđuje PowerUp i definira efekte (duration)
 
 - PowerUpComposite – grupiranje power-upova i upravljanje istima.
 
@@ -275,7 +275,7 @@ Klase:
 
 ### ***/BalloonBlitz.py*** (main)
 
-Ulazna točka igre, služi za pokretanje iste. Inicijalizira pygame i kreira instancu postavki. Također kreira GameStats, Button i Scoreboard. Koristi BalloonFactory za kreiranje balona i kompozite za upravljanje preprekama i power-upovima. Pokreće GameLoop i započinje igru.
+Ulazna točka igre, služi za pokretanje iste. Inicijalizira pygame, kreira instancu postavki (Settings) koja sadrži konfiguraciju igre, stvara glavni prozor prema dimenzijama iz postavki, inicijalizira GameStats (objekt statistike) koji prati bodove, high score, živote i gorivo, kreira također Scoreboard za prikazivanje statistike na ekranu. Kreira i Play gumb koji omogućava ponovno pokretanje igre te balon objektkoristeći BalloonFactory. Kreira kompozite za prepreke i power-upove te inicijalizira glavnu petlju igre (GameLoop).
 
 # 6.	UML DIJAGRAMI
 
